@@ -19,15 +19,18 @@
 #' # Install and load CRAN packages
 #' install_and_load(libraries)
 install_and_load <- function(packages= c("VennDiagram",
-                                            "grid",
-                                            "caret",
-                                            "fields",
-                                            "ggplot2",
-                                            "InterSIM",
-                                            "tidyverse",
-                                            "splatter",
-                                            "NMF",
-                                            "stringr")) {
+                                         "grid",
+                                         "caret",
+                                         "fields",
+                                         "ggplot2",
+                                         "InterSIM",
+                                         "tidyverse",
+                                         "splatter",
+                                         "NMF",
+                                         "stringr",
+                                         "r.jive",
+                                         "psych",
+                                         "gridExtra")) {
   # Check for missing packages
   missing_packages <- packages[!(packages %in% installed.packages()[, "Package"])]
 
@@ -48,10 +51,6 @@ missing_bioc_packages <- bioc_packages[!(bioc_packages %in% installed.packages()
 if (length(missing_bioc_packages) > 0) {
   BiocManager::install(missing_bioc_packages)
 }
-
-# # Example usage
-#
-#install_and_load(libraries)
 
 
 
